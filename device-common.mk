@@ -255,14 +255,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
-# Sensors
-PRODUCT_PACKAGES += \
-    libsensorndkbridge
-
-# Tool
-PRODUCT_PACKAGES += \
-    libtinyxml
-
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -429,11 +421,7 @@ PRODUCT_COPY_FILES += \
 INIT_COMMON_DIAG_RC := $(TARGET_COPY_OUT_VENDOR)/etc/init/init.diag.rc
 
 # Modem debugger
-<<<<<<< HEAD
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-=======
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
->>>>>>> 5d5b24e0... marlin: Disable userdebug diagnostics
 PRODUCT_COPY_FILES += \
     device/google/marlin/init.common.diag.rc.userdebug:$(INIT_COMMON_DIAG_RC)
 
@@ -555,13 +543,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery:64 \
     android.hardware.boot@1.0-service
 
-<<<<<<< HEAD
-# Library used for VTS tests  (only for userdebug and eng builds)
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-=======
 # Library used for VTS tests  (only for eng builds)
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
->>>>>>> 5d5b24e0... marlin: Disable userdebug diagnostics
 # For VTS profiling.
 PRODUCT_PACKAGES += \
      libvts_profiling \
@@ -639,13 +622,8 @@ PRODUCT_PACKAGES += \
     toybox_static
 
 # b/30349163
-<<<<<<< HEAD
-# Set Marlin/Sailfish default log size on userdebug/eng build to 1M
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-=======
 # Set Marlin/Sailfish default log size on eng build to 1M
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
->>>>>>> 5d5b24e0... marlin: Disable userdebug diagnostics
 PRODUCT_PROPERTY_OVERRIDES += ro.logd.size=1M
 endif
 
@@ -666,16 +644,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/marlin/permissions/privapp-permissions-marlin.xml:system/etc/permissions/privapp-permissions-marlin.xml
 
-<<<<<<< HEAD
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so
-=======
 PRODUCT_PACKAGES += \
     com.android.vndk.current \
     vndk-sp
->>>>>>> 352bcacb... marlin: Build com.android.vndk.current apex
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
