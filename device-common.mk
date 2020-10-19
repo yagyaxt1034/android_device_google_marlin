@@ -740,3 +740,7 @@ PRODUCT_PACKAGES += \
 # Write flags to the vendor space in /misc partition.
 PRODUCT_PACKAGES += \
     misc_writer
+
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
