@@ -379,11 +379,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.mode=concurrent
 
 # Enable SM log mechanism by default
-<<<<<<< HEAD
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-=======
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
->>>>>>> 5d5b24e0... marlin: Disable userdebug diagnostics
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.smlog_switch=1 \
     ro.radio.log_prefix="modem_log_" \
@@ -663,10 +659,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/marlin/permissions/privapp-permissions-marlin.xml:system/etc/permissions/privapp-permissions-marlin.xml
 
+<<<<<<< HEAD
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so
+=======
+PRODUCT_PACKAGES += \
+    com.android.vndk.current \
+    vndk-sp
+>>>>>>> 352bcacb... marlin: Build com.android.vndk.current apex
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
