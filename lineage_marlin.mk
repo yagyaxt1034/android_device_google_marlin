@@ -25,7 +25,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device specific makefiles
 $(call inherit-product, device/google/marlin/device-marlin.mk)
-$(call inherit-product, vendor/google/marlin/marlin-vendor.mk)
+$(call inherit-product, vendor/google_devices/marlin/marlin-vendor.mk)
 
 PRODUCT_NAME := lineage_marlin
 PRODUCT_DEVICE := marlin
