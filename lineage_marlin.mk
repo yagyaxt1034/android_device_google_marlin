@@ -1,3 +1,7 @@
+# Boot animation
+TARGET_SCREEN_HEIGHT = 2560
+TARGET_SCREEN_WIDTH = 1440
+
 #
 # Copyright 2015 The Android Open Source Project
 #
