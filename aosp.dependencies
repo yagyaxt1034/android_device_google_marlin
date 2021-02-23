@@ -1,0 +1,13 @@
+[
+   {
+      "repository": "yagyaxt1034/marlin-kernel",
+      "target_path": "device/google/marlin-kernel",
+      "remote": "github"
+   },
+   {
+      "repository": "yagyaxt1034/proprietary_vendor_google_devices_marlin",
+      "target_path": "vendor/google_devices/marlin",
+      "branch": "eleven",
+      "remote": "github"
+   }
+]

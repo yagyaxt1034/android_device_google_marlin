@@ -25,17 +25,15 @@ TARGET_SCREEN_WIDTH = 1440
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit device specific makefiles
 $(call inherit-product, device/google/marlin/device-marlin.mk)
 $(call inherit-product, vendor/google_devices/marlin/marlin-vendor.mk)
 
-PRODUCT_NAME := lineage_marlin
+PRODUCT_NAME := marlin
 PRODUCT_DEVICE := marlin
-PRODUCT_BRAND := google
+PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel XL
-PRODUCT_MANUFACTURER := Google
+PRODUCT_MANUFACTURER := HTC
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # GMS client ID
