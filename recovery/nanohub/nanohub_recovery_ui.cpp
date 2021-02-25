@@ -23,9 +23,37 @@
 #include "recovery_ui/device.h"
 #include "recovery_ui/screen_ui.h"
 
+<<<<<<< HEAD
 class Nanohub_Device : public Device
 {
 public:
+=======
+#include <android-base/logging.h>
+#include <bootloader_message/bootloader_message.h>
+#include <misc_writer/misc_writer.h>
+#include <recovery_ui/device.h>
+#include <recovery_ui/screen_ui.h>
+
+using android::hardware::google::pixel::MiscWriter;
+
+// Wipes the dark theme flag as part of data wipe.
+static bool WipeDarkThemeFlag() {
+    // Must be consistent with the one in init.hardware.rc (10-byte `theme-dark`). The magic is at
+    // 10814 in vendor space, or (2048 + 10814) since the start of /misc.
+    const std::string wipe_str(10, '\x00');
+    constexpr size_t kDarkThemeFlagOffsetInVendorSpace = 10814;
+    if (std::string err; !android::hardware::google::pixel::MiscWriter::WriteMiscPartitionVendorSpace(
+            wipe_str.data(), wipe_str.size(), kDarkThemeFlagOffsetInVendorSpace, &err)) {
+        LOG(ERROR) << "Failed to write wipe string: " << err;
+        return false;
+    }
+    LOG(INFO) << "Dark theme flag wiped successfully";
+    return true;
+}
+
+class Nanohub_Device : public Device {
+  public:
+>>>>>>> 958f0c17... marlin: nanohub_recovery_ui: Include libmisc_writer
     Nanohub_Device(ScreenRecoveryUI* ui) : Device(ui) {}
     bool PostWipeData();
 };
