@@ -197,7 +197,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
     tinymix
-    libqcompostprocbundle
 
 PRODUCT_PACKAGES += \
     sound_trigger.primary.msm8996
