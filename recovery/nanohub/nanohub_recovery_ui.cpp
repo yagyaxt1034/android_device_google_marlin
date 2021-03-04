@@ -23,9 +23,6 @@
 #include "recovery_ui/device.h"
 #include "recovery_ui/screen_ui.h"
 
-<<<<<<< HEAD
-class Nanohub_Device : public Device
-{
 public:
 =======
 #include <android-base/logging.h>
@@ -53,7 +50,6 @@ static bool WipeDarkThemeFlag() {
 
 class Nanohub_Device : public Device {
   public:
->>>>>>> 958f0c17... marlin: nanohub_recovery_ui: Include libmisc_writer
     Nanohub_Device(ScreenRecoveryUI* ui) : Device(ui) {}
     bool PostWipeData();
 };
